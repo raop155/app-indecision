@@ -27,7 +27,7 @@ var user = {
 	location: 'Lima'
 };
 
-var templateTwo = (
+var templateTwo22 = (
 	<div>
 		<h1>{user.name}</h1>
 		<p>Age: {user.age}</p>
