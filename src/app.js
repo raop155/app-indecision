@@ -15,6 +15,8 @@ var template = (
 			<li>Item One</li>
 			<li>Item Two</li>
 			<li>Item Three</li>
+			<li>Item 4</li>
+			<li>Item 5</li>
 		</ol>
 	</div>
 );
