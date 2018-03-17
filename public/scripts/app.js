@@ -1,77 +1,30 @@
-'use strict';
+"use strict";
 
-console.log('App.js is running!');
-
-//create app object
-var app = {
-	'title': 'Titulo',
-	'subtitle': 'Subtitulo'
+var square = function square(x) {
+	return x * x;
 };
 
-// JSX - Javascript XML
-var template = React.createElement(
-	'div',
-	null,
-	React.createElement(
-		'h1',
-		null,
-		app.title
-	),
-	React.createElement(
-		'p',
-		null,
-		app.subtitle
-	),
-	React.createElement(
-		'ol',
-		null,
-		React.createElement(
-			'li',
-			null,
-			'Item One'
-		),
-		React.createElement(
-			'li',
-			null,
-			'Item Two'
-		),
-		React.createElement(
-			'li',
-			null,
-			'Item Three'
-		)
-	)
-);
+// const squareArrow = (x) => {
+// 	return x * x;
+// }
 
-var user = {
-	name: 'Ricardo',
-	age: '27',
-	location: 'Lima'
+
+var squareArrow = function squareArrow(x) {
+	return x * x;
 };
 
-var templateTwo = React.createElement(
-	'div',
-	null,
-	React.createElement(
-		'h1',
-		null,
-		user.name
-	),
-	React.createElement(
-		'p',
-		null,
-		'Age: ',
-		user.age
-	),
-	React.createElement(
-		'p',
-		null,
-		'Location: ',
-		user.location
-	)
-);
+console.log(square(8));
+console.log(squareArrow(5));
 
-var appRoot = document.getElementById('app');
+//Challenge
 
-ReactDOM.render(template, appRoot);
-//ReactDOM.render(templateTwo, appRoot);
+var getFirstName = function getFirstName(name) {
+	return name.split(" ")[0];
+};
+
+var getFirstNameArrow = function getFirstNameArrow(name) {
+	return name.split(" ")[0];
+};
+
+console.log("getFirstName", getFirstName("Mike Smith"));
+console.log("getFirstNameArrow", getFirstNameArrow("Mike Smith"));

@@ -1,42 +1,47 @@
 console.log('App.js is running!');
 
 //create app object
-var app = {
+const app = {
 	'title': 'Titulo',
-	'subtitle': 'Subtitulo'
+	'subtitle': 'Subtitulo',
+	'options': ["One", "Two"]
 };
 
 // JSX - Javascript XML
-var template = (
+const template = (
 	<div>
 		<h1>{app.title}</h1>
-		<p>{app.subtitle}</p>
+		{app.subtitle && <p>{app.subtitle}</p>}
+		<p>{(app.options && app.options.length > 0) ? 'Here are your options' : 'No options'}</p>
 		<ol>
 			<li>Item One</li>
 			<li>Item Two</li>
-			<li>Item Three</li>
-			<li>Item 4</li>
-			<li>Item 5</li>
 		</ol>
 	</div>
 );
 
-var user = {
+const user = {
 	name: 'Ricardo',
 	age: '27',
 	location: 'Lima'
 };
 
-var templateTwo22 = (
+function getLocation(location) {
+	if(location) {
+		return <p>Location: {location}</p>;
+	}
+}
+
+const templateTwo = (
 	<div>
-		<h1>{user.name}</h1>
-		<p>Age: {user.age}</p>
-		<p>Location: {user.location}</p>
+		<h1>{user.name ? user.name : 'Anonymous'}</h1>
+		{(user.age && user.age >= 18) && <p>Age: {user.age}</p>}
+		{getLocation(user.location)}
 	</div>
 );
 
 
-var appRoot = document.getElementById('app');
+const appRoot = document.getElementById('app');
 
 ReactDOM.render(template, appRoot);
 //ReactDOM.render(templateTwo, appRoot);
